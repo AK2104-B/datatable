@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+table.dataTable thead th, table.dataTable thead td {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+table.dataTable {
+   padding-top: 10px;
+  
+}
+#con{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 650px;
+}
+body{
+    color: #004e56;
+    font-size: large;
+    background-image:url('https://media.zicxa.com/6843273');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+#my-form{
+    color: #004e56;  
+   background-color: rgba(255, 228, 196, 0);
+}
+.form-control{
+    background-color: rgba(231, 227, 227, 0.128);;
+}
+.form-control::placeholder{
+    color: #023a4196;  
+    font-size: medium !important;
+}
+.custom-add{
+    height: 37px;
+}
+.custom-delete{
+    height: 37px; 
+}
+#my-form{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#my-cont{
+    border:2px solid #dee3e4;
+    border-radius: 1%;
+    padding: 2%;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    background-color:#c4d0d1d4;
+}
+#con{
+    height: auto;
+    background-color: #ffffff8f;
+    color: #004e56;
+}
+#exampleModalCenter{
+    background-color: transparent;
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #cfc1c1d6;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 1.3rem;
+    outline: 0;
+}
+.cd{
+    height: 37px;
+}
+.cbn{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   font-weight: 400;
+
+}
+.editcu{
+    background-color: transparent;
+  
+    border: none;
+}
+.form-control:valid {
+    background-color:  transparent!important;
+    border-color: gray;
+  }
+  
+  
+  .form-control:focus {
+    border-color: #5f6360;
+    box-shadow: 0 0 0 0.2rem rgba(87, 90, 88, 0.25);
+} 
+
+#email:focus{
+    background-color:  transparent!important;
+    border-color: gray;
+}
+#email{
+    border-color: #5f6360;
+}
+h1 {
+    display: grid;
+    grid-template-columns: minmax(50px, 1fr) auto minmax(50px, 1fr);
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    
+  }
+  
+  h1::before, h1::after {
+    content: '';
+    border-top: 6px double;
+  }
+  
+  /* everything below is for demo appearances and not important to the concept */
+  
+  body, h1 {
+    margin: 0;
+  }
+  
+  @media (max-width: 400px) {
+    h1 { font-size: 1.5rem; }
+  }
+  

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>task7</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container mt-3 p-5 " id="con">
+         <div class="row mb-5">
+            <h1 class="h1">Data table</h1>
+         </div>
+        <div class="col d-flex align-item-centerd-flex justify-content-lg-start mb-4 ">
+            <button type="button" class="btn btn-outline-secondary cbn" data-toggle="modal"
+                data-target="#exampleModalCenter" id="addbtn">
+                Add Details
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="col modal fade  bd-example-modal-xl" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-center">
+                        <h1>Education form</h1>
+                    </div>
+                    <div class="modal-body">
+                    
+                        <form onsubmit="return validate()" id="my-form" name="myForm">
+
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label " for="form6Example1">First name</label>
+                                        <input type="text" id="firstname" class="form-control" value="First name"/>
+                                        <b><span id="firstnam" class="text-danger"> </span></b>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="form6Example2">Last name</label>
+                                        <input type="text" id="lastname" class="form-control" value="Last name"/>
+                                        <b><span id="lastnam" class="text-danger"> </span></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- date input -->
+                            <div class="row mb4">
+                                <div class="col form-outline mb-4">
+                                    <label class="form-label" for="form6Example4" >Date of Birth</label>
+                                    <input type="date" id="dateofbirth" class="form-control" />
+                                    <b><span id="dateofbirt" class="text-danger"> </span></b>
+                                </div>
+    
+                                <div class="col form-outline mb-4">
+                                    <label class="form-label" for="form6Example4">Contact number</label>
+                                    <input type="number" id="contact" class="form-control" />
+                                    <b><span id="contac" class="text-danger"> </span></b>
+                                </div>
+                            </div>
+                           
+
+
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form6Example5">Email</label>
+                                <input type="email" id="email" class="form-control" />
+                                <b><span id="emai" class="text-danger"> </span></b>
+                            </div>
+
+                            <!-- Address input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="form6Example7">Address</label>
+                                <textarea class="form-control" id="address" rows="4"></textarea>
+                                <b><span id="addres" class="text-danger"> </span></b>
+                            </div>
+                            <div class="form-outline mb-5 d-flex justify-content-center align-items-center">
+                                <h1>Education details</h1>
+                            </div>
+                            <div class="form-outline mb-4 flex-wrap" id="parent">
+                                <div class="col d-flex flex-row justify-content-between mb-3 flex-wrap">
+                                    <div class="col pe-3 " id="degree-main-div ">
+                                        <label class="form-label" >Degree</label>
+                                        <input type="text" class="form-control" id="degree0" placeholder="Degree"
+                                            >
+                                        <b><span id="degree_err0" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3 " id="collage-main-div">
+                                        <label class="form-label" for="date">Collage</label>
+                                        <input type="text" class="form-control" name="" id="collage0"
+                                            placeholder="Collage" >
+                                        <b><span id="collage_err0" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3  " id="start-main-div">
+                                        <label class="form-label" for="date">starting date</label>
+                                        <input type="date" class="form-control" 
+                                            id="starting0" >
+                                        <b><span id="sdate_err0" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3 " id="end-main-div">
+                                        <label class="form-label" for="date" >Passing</label>
+                                        <input type="number" class="form-control"
+                                            id="ending0" max="5000" min="0000" placeholder="YYYY">
+                                        <b><span id="edate_err0" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3 " id="cgpa-main-div">
+                                        <label class="form-label" for="date">Percentage</label>
+                                        <input type="number" class="form-control" placeholder="%"
+                                            id="cgpa-degree0" >
+                                        <b><span id="cgpa_err0" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3" id="backlog-main-div">
+                                        <label class="form-label" for="date">Backlog</label>
+                                        <input type="number" class="form-control" placeholder="if any" id="backlog0"
+                                            >
+                                        <b><span id="backlog_err0" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col mt-4 d-flex justify-content-end">
+
+                                        <button id="plus" type="button"
+                                            class="btn btn-outline-primary mt-2 custom-add"><i class="fa fa-plus"
+                                                aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-row justify-content-between mb-3 flex-wrap">
+                                    <div class="col pe-3 " id="degree-main-divp2 ">
+
+                                        <input type="text" class="form-control" id="degree1" placeholder="Degree "
+                                            >
+                                        <b><span id="degree_err1" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3 " id="collage-main-divp2">
+
+                                        <input type="text" class="form-control" name="" id="collage1"
+                                            placeholder="Collage" >
+                                        <b><span id="collage_err1" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3  " id="start-main-divp2">
+
+                                        <input type="date" class="form-control"
+                                            id="starting1" >
+                                        <b><span id="sdate_err1" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3 " id="end-main-divp2">
+
+                                        <input type="number" class="form-control" 
+                                            id="ending1" max="5000" min="0000" placeholder="YYYY">
+                                        <b><span id="edate_err1" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col pe-3 " id="cgpa-main-divp2">
+
+                                        <input type="number" class="form-control" placeholder="%"
+                                            id="cgpa-degree1" >
+                                        <b><span id="cgpa_err1" class="text-danger"> </span></b>
+
+                                    </div>
+                                    <div class="col pe-3" id="backlog-main-divp2">
+
+                                        <input type="number" class="form-control" placeholder="if any" id="backlog1">
+                                        <b><span id="backlog_err1" class="text-danger"> </span></b>
+                                    </div>
+                                    <div class="col mt-4 d-flex justify-content-end">
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+                            <!-- Submit button -->
+                            <div class="d-flex ">
+                                <button type="submit" class="btn btn-outline-primary btn-block mt-5 mb-4  w-50 cbn"
+                                    id="submit">Submit</button>
+                                <button type="button" class="btn btn-outline-success btn-block mt-5 mb-4  w-50 cbn"
+                                    id="update">Update</button>
+                                <button type="button" class="btn btn-outline-secondary w-50 mt-5 mb-4 cbn"
+                                    data-dismiss="modal" style="    margin-left: 5%;">Close</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <table id="example" class="display " style="width:100%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>first name</th>
+                        <th>last name</th>
+                        <th>Date-of-birth</th>
+                        <th>contactNumber</th>
+                        <th>email</th>
+                        <th>address</th>
+                        <th>Process</th>
+                       
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+
+
+    </div>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+<script src="./bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+<script src="js/script.js"></script>
+
+
+
+</html>
